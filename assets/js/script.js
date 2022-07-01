@@ -13,11 +13,10 @@ var buttonElOne = document.querySelector('#Answer1');
 var buttonElTwo = document.querySelector('#Answer2');
 var buttonElThree = document.querySelector('#Answer3');
 var buttonElFour = document.querySelector('#Answer4');
-var timeLeft = 60;
+
 // Timer----------------------------------------------------------------------
 function countdown() {
-    // var timeLeft = 61;
-  
+    var timeLeft = 60; 
     var timeInterval = setInterval(function () {
      if (timeLeft > 1) {
      timerEl.textContent = 'Timer: ' + timeLeft;
@@ -29,8 +28,7 @@ function countdown() {
     }, 1000);
   }
 // timer end------------------------------------------------------------------------------------
-// activates countdown function
-//   countdown();
+countdown();
 // time penalty--------------------------------------------------------------------------------
 //   var timePenalty = buttonEl.addEventListener("click", function() {
 //     if (timeLeft > 1) {
@@ -48,12 +46,10 @@ function countdown() {
   //time penalty end---------------------------------------------------------------------------- 
     
 //Populate form function---------------------------------------------------------------------
-var questionOrder = ["Question 1", "Question 2"]
-var questionText = ["Question 1 bla bla", "Question 2 bla bla"]
-var questionOneAnswers = ["a1","a2","a3","a4"]
-
-
 function populate () {
+    var questionOrder = ["Question 1", "Question 2"]
+    var questionText = ["Question 1 bla bla", "Question 2 bla bla"]
+    var questionOneAnswers = ["a1","a2","a3","a4"]
     var h1 = document.querySelector('h1');
     var p = document.querySelector("#p");
     var one = document.querySelector("#answer1");
@@ -71,27 +67,72 @@ function populate () {
     four.innerText = questionOneAnswers[3];
 };
 // populate form function end----------------------------------------------------------------------
-// Ativates populate function----------------------------------------------------------------------
 populate();
-
-// -------------------------------------------------------------------------------------------------
-// Need user input----------------------------------------------------------------------------------
-var correctAnswers = ["a1","a5"]
-
-// var one = document.querySelector("#answer1");
+// User input Function-----------------------------------------------------------------------------
+function userInput () {
+var correctAnswers = ["a1"]
+// BUTTON 1
 var buttonElOne = document.querySelector("#answer1");
 buttonElOne.addEventListener("click", function() {
-    // on click of button 1 it equals entry one
-    
-    if (buttonElOne == correctAnswers[0]) {
-       
-        alert("Correct");
-     } else {
-        alert("Incorrect");
-     };
+ // on click of button 1 it equals entry one
+// ($(buttonElOne).text() will read it text value as text
+if ($(buttonElOne).text() === correctAnswers[0]) {
+alert("Correct");
+} else {
+alert("Incorrect");
+};
  });
  console.log(buttonElOne);
  console.log(correctAnswers[0]);
+//  Button 2
+var buttonElTwo = document.querySelector("#answer2");
+buttonElTwo.addEventListener("click", function() {
+ // on click of button 1 it equals entry one
+// ($(buttonElOne).text() will read it text value as text
+if ($(buttonElTwo).text() === correctAnswers[0]) {
+alert("Correct");
+} else {
+alert("Incorrect");
+};
+ });
+ console.log(buttonElTwo);
+ console.log(correctAnswers[0]);
+//  Button 3
+var buttonElThree = document.querySelector("#answer3");
+buttonElThree.addEventListener("click", function() {
+ // on click of button 1 it equals entry one
+// ($(buttonElOne).text() will read it text value as text
+if ($(buttonElThree).text() === correctAnswers[0]) {
+alert("Correct");
+} else {
+alert("Incorrect");
+};
+ });
+ console.log(buttonElThree);
+ console.log(correctAnswers[0]);
+ //  Button 4
+var buttonElFour = document.querySelector("#answer4");
+buttonElFour.addEventListener("click", function() {
+ // on click of button 1 it equals entry one
+// ($(buttonElOne).text() will read it text value as text
+if ($(buttonElFour).text() === correctAnswers[0]) {
+alert("Correct");
+} else {
+alert("Incorrect");
+};
+ });
+ console.log(buttonElThree);
+ console.log(correctAnswers[0]);
+};
+// User input Function end-----------------------------------------------------------------------------
+userInput ();
+
+
+ 
+
+
+
+ 
  
 
 // // var two = document.querySelector("#answer2");
