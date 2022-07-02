@@ -1,13 +1,3 @@
-var pointsTotal = 0;
-var points = 20;
-
-function addPoints () {
-  pointsTotal+=points
-};
-
-function subtractPoints () {
-  pointsTotal=-points
-};
 // Timer----------------------------------------------------------------------
 var timerEl = document.getElementById('countdown');
 var timeLeft = 60; 
@@ -85,10 +75,8 @@ buttonOne.addEventListener("click", function() {
 if ($(buttonOne).text() === answerKey) {
 populateQuestion2 ();
 userInputQuestion2 ();
-addPoints ();
 } else {
 timePenalty ();
-subtractPoints();
 }
 });
 console.log(buttonOne);
@@ -102,10 +90,8 @@ buttonTwo.addEventListener("click", function() {
 if ($(buttonTwo).text() === answerKey) {
 populateQuestion2 ();
 userInputQuestion2 ();
-addPoints ();
 } else {
 timePenalty ();
-subtractPoints();
 }
 });
 //  BUTTON 3
@@ -115,10 +101,8 @@ buttonThree.addEventListener("click", function() {
 if ($(buttonThree).text() === answerKey) {
 populateQuestion2 ();
 userInputQuestion2 ();
-addPoints ();
 } else {
 timePenalty ();
-subtractPoints();
 }
 });
  //  BUTTON 4
@@ -128,10 +112,8 @@ buttonFour.addEventListener("click", function() {
 if ($(buttonFour).text() === answerKey) {
 populateQuestion2 ();
 userInputQuestion2 ();
-addPoints ();
 } else {
 timePenalty ();
-subtractPoints();
 }
 }); return;
 };
@@ -175,10 +157,8 @@ function userInputQuestion2 () {
   if ($(buttonOne1).text() === answerKey) {
   populateQuestion3 ();
   userInputQuestion3 ();
-  addPoints ();
   } else {
   timePenalty ();
-  subtractPoints();
   } 
   });
   console.log(buttonOne1);
@@ -190,10 +170,8 @@ function userInputQuestion2 () {
   if ($(buttonTwo1).text() === answerKey) {
   populateQuestion3 ();
   userInputQuestion3 ();
-  addPoints ();
   } else {
   timePenalty ();
-  subtractPoints();
   } 
   });
   //  BUTTON 3
@@ -203,10 +181,8 @@ function userInputQuestion2 () {
   if ($(buttonThree1).text() === answerKey) {
   populateQuestion3 ();
   userInputQuestion3 ();
-  addPoints ();
   } else {
   timePenalty ();
-  subtractPoints();
   } 
   });
    //  BUTTON 4
@@ -216,10 +192,8 @@ function userInputQuestion2 () {
   if ($(buttonFour1).text() === answerKey) {
   populateQuestion3 ();
   userInputQuestion3 ();
-  addPoints ();
   } else {
   timePenalty ();
-  subtractPoints();
   } 
   });
   };
@@ -261,10 +235,8 @@ function userInputQuestion3 () {
   if ($(buttonOne).text() === answerKey[0]) {
   populateQuestion4 ();
   userInputQuestion4 ();
-  addPoints ();
   } else {
   timePenalty ();
-  subtractPoints();
   };
   });
   //  BUTTON 2
@@ -274,10 +246,8 @@ function userInputQuestion3 () {
   if ($(buttonTwo).text() === answerKey[0]) {
   populateQuestion4 ();
   userInputQuestion4 ();
-  addPoints ();
   } else {
   timePenalty ();
-  subtractPoints();
   };
   });
   //  BUTTON 3
@@ -287,10 +257,8 @@ function userInputQuestion3 () {
   if ($(buttonThree).text() === answerKey[0]) {
   populateQuestion4 ();
   userInputQuestion4 ();
-  addPoints ();
   } else {
   timePenalty ();
-  subtractPoints();
   };
   });
    //  BUTTON 4
@@ -300,10 +268,8 @@ function userInputQuestion3 () {
   if ($(buttonFour).text() === answerKey[0]) {
   populateQuestion4 ();
   userInputQuestion4 ();
-  addPoints ();
   } else {
   timePenalty ();
-  subtractPoints();
   };
   });
   };
@@ -345,10 +311,8 @@ function userInputQuestion4 () {
   if ($(buttonOne).text() === answerKey[0]) {
   populateQuestion5 ();
   userInputQuestion5 ();
-  addPoints ();
   } else {
   timePenalty ();
-  subtractPoints();
   };
   });
   //  BUTTON 2
@@ -358,10 +322,8 @@ function userInputQuestion4 () {
   if ($(buttonTwo).text() === answerKey[0]) {
   populateQuestion5 ();
   userInputQuestion5 ();
-  addPoints ();
   } else {
   timePenalty ();
-  subtractPoints();
   };
   });
   //  BUTTON 3
@@ -371,10 +333,8 @@ function userInputQuestion4 () {
   if ($(buttonThree).text() === answerKey[0]) {
   populateQuestion5 ();
   userInputQuestion5 ();
-  addPoints ();
   } else {
   timePenalty ();
-  subtractPoints();
   };
   });
    //  BUTTON 4
@@ -384,10 +344,8 @@ function userInputQuestion4 () {
   if ($(buttonFour).text() === answerKey[0]) {
   populateQuestion5 ();
   userInputQuestion5 ();
-  addPoints ();
   } else {
   timePenalty ();
-  subtractPoints();
   };
   });
   };
@@ -427,11 +385,10 @@ function userInputQuestion5 () {
   buttonOne.addEventListener("click", function() {
   // ($(buttonOne).text() will read it text value as text and will validate it against answer key
   if ($(buttonOne).text() === answerKey[0]) {
-  addPoints ();
-  console.log(pointsTotal);
+  alert("Correct!");
+  // prompt ();
   } else {
   timePenalty ();
-  subtractPoints();
   alert("Wrong!");
   };
   });
@@ -441,11 +398,9 @@ function userInputQuestion5 () {
   // ($(buttonTwo).text() will read it text value as text and will validate it against answer key
   if ($(buttonTwo).text() === answerKey[0]) {
     alert("Correct!");
-    addPoints ();
-    console.log(pointsTotal);
+    // prompt ();
   } else {
   timePenalty ();
-  subtractPoints();
   alert("Wrong!");
   };
   });
@@ -455,11 +410,9 @@ function userInputQuestion5 () {
   // ($(buttonThree).text() will read it text value as text and will validate it against answer key
   if ($(buttonThree).text() === answerKey[0]) {
     alert("Correct!");
-    addPoints ();
-    console.log(pointsTotal);
+    // prompt ();
   } else {
   timePenalty ();
-  subtractPoints();
   alert("Wrong!");
   };
   });
@@ -469,17 +422,14 @@ function userInputQuestion5 () {
   // ($(buttonFour).text() will read it text value as text and will validate it against answer key
   if ($(buttonFour).text() === answerKey[0]) {
     alert("Correct!");
-    addPoints ();
-    console.log(pointsTotal);
+    // prompt ();
   } else {
   timePenalty ();
-  subtractPoints();
   alert("Wrong!");
   };
   });
   };
   // Questions end------------------------------------------------------------------------------------
-  console.log(pointsTotal);
   // Highscores--------------------------------------------------------------------------------------
   // var emailInput = document.querySelector("#email");
   var nameInput = document.querySelector("#name");
@@ -527,10 +477,6 @@ function userInputQuestion5 () {
     location.href = "./scoreboard.html";
 };
 
-var userInput =[];
-  for(var i = 0; i < 1; i++) {
-    userInput.push(prompt(""))
-  }
 
 
  
