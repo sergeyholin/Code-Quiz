@@ -12,9 +12,9 @@
 
 <body>
 
-  <!-- Add a navbar here -->
+  
   <nav class="d-flex justify-content-between navbar navbar-light bg-light">
-  <!-- <form class="form-inline"> -->
+
       <button class="btn btn-outline-success" type="button">View Highscores</button>
      
       <span class="navbar-text">
@@ -35,7 +35,7 @@
     <div class="col-12 col-md-12 col-lg-12">
     <section class="row justify-content-center"></section>
     <div class="card">
-      <h2>Last Registered User:</h2>
+      <h2>User Scoreboard:</h2>
       <p><strong>Name:</strong> <span id="user-name"></span></p>
       <p><strong>Score:</strong> <span id="user-score"></span></p>
     </div>
@@ -50,9 +50,13 @@
     <div class="col-6 col-sm-6 col-lg-6 ">
       <form>
         <div class="form-group">
-          <label for="exampleInputPassword1" id = "name">Please enter your name</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+          <label for="exampleInputPassword1">Please enter your name</label>
+          <input class="form-control" type="text" placeholder="Jack" id = "name">
         </div>
+        <!-- <div class="form-group">
+          <label for="exampleInputPassword1">Your score is:</label>
+          <input class="form-control" id = "score" type="text" placeholder="Readonly input here..." readonly>
+        </div> -->
         <button type="submit" class="btn btn-primary" id = "submit-button">Submit</button>
       </form>
     </div>
@@ -61,15 +65,8 @@
     </div>
     </section>
   
-
-
-
-
-
-    
-
   </main>
-  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/script2.js"></script>
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>

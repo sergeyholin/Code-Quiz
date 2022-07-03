@@ -1,3 +1,4 @@
+// Points
 var pointsTotal = 0;
 var points = 20;
 
@@ -6,7 +7,7 @@ function addPoints () {
 };
 
 function subtractPoints () {
-  pointsTotal=-points
+  pointsTotal-=points
 };
 // Timer----------------------------------------------------------------------
 var timerEl = document.getElementById('countdown');
@@ -19,6 +20,7 @@ var timeInterval = setInterval(function () {
      } else {
      timerEl.textContent = '0';
      clearInterval(timeInterval);
+     scoreboard ();
     }
 }, 1000);
 // Timer Penalty Function-------------------------------------------------------------
@@ -29,23 +31,16 @@ function timePenalty () {
     } else {
     timerEl.textContent = '0';
     clearInterval(timeInterval);
+    scoreboard ();
     }1000;
     return;
 };
 // timer end------------------------------------------------------------------------------------ 
-
-
-var questionOrder = ["Question 1"]
-var questionText = ["Question 1 bla bla bla"]
-var questionAnswers = ["a1","a2","a3","a4"]
-
-
-
 //Populate form function---------------------------------------------------------------------
 function populateQestion1 () {
-    // var questionOrder = ["Question 1"]
-    // var questionText = ["Question 1 bla bla bla"]
-    // var questionAnswers = ["a1","a2","a3","a4"]
+    var questionOrder = ["Question 1"]
+    var questionText = ["What does CSS stand for?"]
+    var questionAnswers = ["Chart Style Sheet","Cascading Style Sheet","Computer Styling Styles","Continuing Silk Sheets"]
     // questionOrder.unshift("Question 2"), questionText.unshift("Question 2 bla bla bla"), questionAnswers.unshift("aa1","aa2","aa3","aa4");
     // Randomizing questions in the array
     let questionAnswersRandomized = questionAnswers
@@ -73,75 +68,99 @@ function populateQestion1 () {
 populateQestion1(); 
 // // User input Function-----------------------------------------------------------------------------
 function userInputQuestion1 () {
-var answerKey = "a1"
+var answerKey = "Cascading Style Sheet"
 var buttonOne = document.querySelector("#answer1");
 var buttonTwo = document.querySelector("#answer2");
 var buttonThree = document.querySelector("#answer3");
 var buttonFour = document.querySelector("#answer4");
 // BUTTON 1
 // var buttonOne = document.querySelector("#answer2");
-buttonOne.addEventListener("click", function() {
+buttonOne.addEventListener("click", function(event) {
+  event.preventDefault();
+event.stopPropagation();
 // ($(buttonTwo).text() will read it text value as text and will validate it against answer key
 if ($(buttonOne).text() === answerKey) {
 populateQuestion2 ();
 userInputQuestion2 ();
 addPoints ();
+
+console.log(pointsTotal);
 } else {
 timePenalty ();
 subtractPoints();
+return;
 }
 });
 console.log(buttonOne);
 console.log(answerKey)
+console.log(pointsTotal);
 
 
 //  BUTTON 2
 // var buttonTwo = document.querySelector("#answer2");
-buttonTwo.addEventListener("click", function() {
+buttonTwo.addEventListener("click", function(event) {
+  event.preventDefault();
+  event.stopPropagation();
 // ($(buttonTwo).text() will read it text value as text and will validate it against answer key
 if ($(buttonTwo).text() === answerKey) {
 populateQuestion2 ();
 userInputQuestion2 ();
 addPoints ();
+console.log(pointsTotal);
+return;
 } else {
 timePenalty ();
 subtractPoints();
+console.log(pointsTotal);
+return;
 }
 });
 //  BUTTON 3
 // var buttonThree = document.querySelector("#answer3");
-buttonThree.addEventListener("click", function() {
+buttonThree.addEventListener("click", function(event) {
+  event.preventDefault();
+  event.stopPropagation();
 // ($(buttonThree).text() will read it text value as text and will validate it against answer key
 if ($(buttonThree).text() === answerKey) {
 populateQuestion2 ();
 userInputQuestion2 ();
 addPoints ();
+console.log(pointsTotal);
+return;
 } else {
 timePenalty ();
 subtractPoints();
+console.log(pointsTotal);
+return;
 }
 });
  //  BUTTON 4
 // var buttonFour = document.querySelector("#answer4");
-buttonFour.addEventListener("click", function() {
+buttonFour.addEventListener("click", function(event) {
+  event.preventDefault();
+  event.stopPropagation();
 // ($(buttonFour).text() will read it text value as text and will validate it against answer key
 if ($(buttonFour).text() === answerKey) {
 populateQuestion2 ();
 userInputQuestion2 ();
 addPoints ();
+console.log(pointsTotal);
+return;
 } else {
 timePenalty ();
 subtractPoints();
+console.log(pointsTotal);
+return;
 }
-}); return;
+});return;
 };
 // User input Function end-----------------------------------------------------------------------------
 userInputQuestion1 ();
 // // QUESTION 2------------------------------------------------------------------------------------------
 function populateQuestion2 () {
   var questionOrder = ["Question 2"]
-  var questionText = ["Question 2 bla bla bla"]
-  var questionAnswers = ["aa1","aa2","aa3","aa4"]
+  var questionText = ["What does var stand for?"]
+  var questionAnswers = ["valuable","value","variable","varied"]
   // questionOrder.unshift("Question 2"), questionText.unshift("Question 2 bla bla bla"), questionAnswers.unshift("aa1","aa2","aa3","aa4");
   // Randomizing questions in the array
   let questionAnswersRandomized = questionAnswers
@@ -167,67 +186,91 @@ function populateQuestion2 () {
 };
 // INPUT2---------------------------------------------------------
 function userInputQuestion2 () {
-  var answerKey = "aa1"
+  var answerKey = "variable"
   // BUTTON 1
-  var buttonOne1 = document.querySelector("#answer1");
-  buttonOne1.addEventListener("click", function() {
+  var buttonOne = document.querySelector("#answer1");
+  buttonOne.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   // ($(buttonOne).text() will read it text value as text and will validate it against answer key
-  if ($(buttonOne1).text() === answerKey) {
+  if ($(buttonOne).text() === answerKey) {
   populateQuestion3 ();
   userInputQuestion3 ();
   addPoints ();
+  console.log(pointsTotal);
+  return;
   } else {
   timePenalty ();
   subtractPoints();
+  console.log(pointsTotal);
+  return;
   } 
   });
-  console.log(buttonOne1);
+  console.log(buttonOne);
   console.log(answerKey);
   //  BUTTON 2
-  var buttonTwo1 = document.querySelector("#answer2");
-  buttonTwo1.addEventListener("click", function() {
+  var buttonTwo = document.querySelector("#answer2");
+  buttonTwo.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   // ($(buttonTwo).text() will read it text value as text and will validate it against answer key
-  if ($(buttonTwo1).text() === answerKey) {
+  if ($(buttonTwo).text() === answerKey) {
   populateQuestion3 ();
   userInputQuestion3 ();
   addPoints ();
+  console.log(pointsTotal);
+  return;
   } else {
   timePenalty ();
   subtractPoints();
+  console.log(pointsTotal);
+  return;
   } 
   });
   //  BUTTON 3
-  var buttonThree1 = document.querySelector("#answer3");
-  buttonThree1.addEventListener("click", function() {
+  var buttonThree = document.querySelector("#answer3");
+  buttonThree.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   // ($(buttonThree).text() will read it text value as text and will validate it against answer key
-  if ($(buttonThree1).text() === answerKey) {
+  if ($(buttonThree).text() === answerKey) {
   populateQuestion3 ();
   userInputQuestion3 ();
   addPoints ();
+  console.log(pointsTotal);
+  return;
   } else {
   timePenalty ();
   subtractPoints();
+  console.log(pointsTotal);
+  return;
   } 
   });
    //  BUTTON 4
-  var buttonFour1 = document.querySelector("#answer4");
-  buttonFour1.addEventListener("click", function() {
+  var buttonFour = document.querySelector("#answer4");
+  buttonFour.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   // ($(buttonFour).text() will read it text value as text and will validate it against answer key
-  if ($(buttonFour1).text() === answerKey) {
+  if ($(buttonFour).text() === answerKey) {
   populateQuestion3 ();
   userInputQuestion3 ();
   addPoints ();
+  console.log(pointsTotal);
+  return;
   } else {
   timePenalty ();
   subtractPoints();
+  console.log(pointsTotal);
+  return;
   } 
-  });
+  });return;
   };
 // QUESTION 3-------------------------------------------------------------------------------------------
 function populateQuestion3 () {
   var questionOrder = ["Question 3"]
-  var questionText = ["Question 3 bla bla bla"]
-  var questionAnswers = ["aaa1","aaa2","aaa3","aaa4"]
+  var questionText = ["What HTML are we currently using?"]
+  var questionAnswers = ["HTML 11","HTML OSX","HTML 5","HTML III"]
   // questionOrder.unshift("Question 2"), questionText.unshift("Question 2 bla bla bla"), questionAnswers.unshift("aa1","aa2","aa3","aa4");
   // Randomizing questions in the array
   let questionAnswersRandomized = questionAnswers
@@ -253,12 +296,14 @@ function populateQuestion3 () {
 };
 // INPUT3---------------------------------------------------------
 function userInputQuestion3 () {
-  var answerKey = ["aaa1"]
+  var answerKey = "HTML 5"
   // BUTTON 1
   var buttonOne = document.querySelector("#answer1");
-  buttonOne.addEventListener("click", function() {
+  buttonOne.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   // ($(buttonOne).text() will read it text value as text and will validate it against answer key
-  if ($(buttonOne).text() === answerKey[0]) {
+  if ($(buttonOne).text() === answerKey) {
   populateQuestion4 ();
   userInputQuestion4 ();
   addPoints ();
@@ -269,9 +314,11 @@ function userInputQuestion3 () {
   });
   //  BUTTON 2
   var buttonTwo = document.querySelector("#answer2");
-  buttonTwo.addEventListener("click", function() {
+  buttonTwo.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   // ($(buttonTwo).text() will read it text value as text and will validate it against answer key
-  if ($(buttonTwo).text() === answerKey[0]) {
+  if ($(buttonTwo).text() === answerKey) {
   populateQuestion4 ();
   userInputQuestion4 ();
   addPoints ();
@@ -282,9 +329,11 @@ function userInputQuestion3 () {
   });
   //  BUTTON 3
   var buttonThree = document.querySelector("#answer3");
-  buttonThree.addEventListener("click", function() {
+  buttonThree.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   // ($(buttonThree).text() will read it text value as text and will validate it against answer key
-  if ($(buttonThree).text() === answerKey[0]) {
+  if ($(buttonThree).text() === answerKey) {
   populateQuestion4 ();
   userInputQuestion4 ();
   addPoints ();
@@ -295,9 +344,11 @@ function userInputQuestion3 () {
   });
    //  BUTTON 4
   var buttonFour = document.querySelector("#answer4");
-  buttonFour.addEventListener("click", function() {
+  buttonFour.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   // ($(buttonFour).text() will read it text value as text and will validate it against answer key
-  if ($(buttonFour).text() === answerKey[0]) {
+  if ($(buttonFour).text() === answerKey) {
   populateQuestion4 ();
   userInputQuestion4 ();
   addPoints ();
@@ -310,8 +361,8 @@ function userInputQuestion3 () {
 // QUESTION 4-------------------------------------------------------------------------------------------
 function populateQuestion4 () {
   var questionOrder = ["Question 4"]
-  var questionText = ["Question 4 bla bla bla"]
-  var questionAnswers = ["aaaa1","aaaa2","aaaa3","aaaa4"]
+  var questionText = ["Which famous company created Bootstrap?"]
+  var questionAnswers = ["Twitter","Google","Facebook","Tik-Tok"]
   // questionOrder.unshift("Question 2"), questionText.unshift("Question 2 bla bla bla"), questionAnswers.unshift("aa1","aa2","aa3","aa4");
   // Randomizing questions in the array
   let questionAnswersRandomized = questionAnswers
@@ -337,10 +388,12 @@ function populateQuestion4 () {
 };
 // INPUT4---------------------------------------------------------
 function userInputQuestion4 () {
-  var answerKey = ["aaaa1"]
+  var answerKey = ["Twitter"]
   // BUTTON 1
   var buttonOne = document.querySelector("#answer1");
-  buttonOne.addEventListener("click", function() {
+  buttonOne.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   // ($(buttonOne).text() will read it text value as text and will validate it against answer key
   if ($(buttonOne).text() === answerKey[0]) {
   populateQuestion5 ();
@@ -353,7 +406,9 @@ function userInputQuestion4 () {
   });
   //  BUTTON 2
   var buttonTwo = document.querySelector("#answer2");
-  buttonTwo.addEventListener("click", function() {
+  buttonTwo.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   // ($(buttonTwo).text() will read it text value as text and will validate it against answer key
   if ($(buttonTwo).text() === answerKey[0]) {
   populateQuestion5 ();
@@ -366,7 +421,9 @@ function userInputQuestion4 () {
   });
   //  BUTTON 3
   var buttonThree = document.querySelector("#answer3");
-  buttonThree.addEventListener("click", function() {
+  buttonThree.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   // ($(buttonThree).text() will read it text value as text and will validate it against answer key
   if ($(buttonThree).text() === answerKey[0]) {
   populateQuestion5 ();
@@ -379,7 +436,9 @@ function userInputQuestion4 () {
   });
    //  BUTTON 4
   var buttonFour = document.querySelector("#answer4");
-  buttonFour.addEventListener("click", function() {
+  buttonFour.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   // ($(buttonFour).text() will read it text value as text and will validate it against answer key
   if ($(buttonFour).text() === answerKey[0]) {
   populateQuestion5 ();
@@ -394,8 +453,8 @@ function userInputQuestion4 () {
 // QUESTION 5-------------------------------------------------------------------------------------------
 function populateQuestion5 () {
   var questionOrder = ["Question 5"]
-  var questionText = ["Question 5 bla bla bla"]
-  var questionAnswers = ["aaaaa1","aaaaa2","aaaaa3","aaaaa4"]
+  var questionText = ["How do you identify an id selector?"]
+  var questionAnswers = [".","@","$","#"]
   // questionOrder.unshift("Question 2"), questionText.unshift("Question 2 bla bla bla"), questionAnswers.unshift("aa1","aa2","aa3","aa4");
   // Randomizing questions in the array
   let questionAnswersRandomized = questionAnswers
@@ -421,14 +480,18 @@ function populateQuestion5 () {
 };
 // INPUT---------------------------------------------------------
 function userInputQuestion5 () {
-  var answerKey = ["aaaaa1"]
+  var answerKey = ["#"]
   // BUTTON 1
   var buttonOne = document.querySelector("#answer1");
-  buttonOne.addEventListener("click", function() {
+  buttonOne.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   // ($(buttonOne).text() will read it text value as text and will validate it against answer key
   if ($(buttonOne).text() === answerKey[0]) {
   addPoints ();
   console.log(pointsTotal);
+  localStorage.setItem("score", pointsTotal);
+  scoreboard ();
   } else {
   timePenalty ();
   subtractPoints();
@@ -437,12 +500,16 @@ function userInputQuestion5 () {
   });
   //  BUTTON 2
   var buttonTwo = document.querySelector("#answer2");
-  buttonTwo.addEventListener("click", function() {
+  buttonTwo.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   // ($(buttonTwo).text() will read it text value as text and will validate it against answer key
   if ($(buttonTwo).text() === answerKey[0]) {
     alert("Correct!");
     addPoints ();
     console.log(pointsTotal);
+    localStorage.setItem("score", pointsTotal);
+    scoreboard ();
   } else {
   timePenalty ();
   subtractPoints();
@@ -451,12 +518,16 @@ function userInputQuestion5 () {
   });
   //  BUTTON 3
   var buttonThree = document.querySelector("#answer3");
-  buttonThree.addEventListener("click", function() {
+  buttonThree.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   // ($(buttonThree).text() will read it text value as text and will validate it against answer key
   if ($(buttonThree).text() === answerKey[0]) {
     alert("Correct!");
     addPoints ();
     console.log(pointsTotal);
+    localStorage.setItem("score", pointsTotal);
+    scoreboard ();
   } else {
   timePenalty ();
   subtractPoints();
@@ -465,12 +536,16 @@ function userInputQuestion5 () {
   });
    //  BUTTON 4
   var buttonFour = document.querySelector("#answer4");
-  buttonFour.addEventListener("click", function() {
+  buttonFour.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
   // ($(buttonFour).text() will read it text value as text and will validate it against answer key
   if ($(buttonFour).text() === answerKey[0]) {
     alert("Correct!");
     addPoints ();
     console.log(pointsTotal);
+    localStorage.setItem("score", pointsTotal);
+    scoreboard ();
   } else {
   timePenalty ();
   subtractPoints();
@@ -479,59 +554,10 @@ function userInputQuestion5 () {
   });
   };
   // Questions end------------------------------------------------------------------------------------
-  console.log(pointsTotal);
-  // Highscores--------------------------------------------------------------------------------------
-  // var emailInput = document.querySelector("#email");
-  var nameInput = document.querySelector("#name");
-  // var submitButton = document.querySelector("#submit");
-  var userNameSpan = document.querySelector("#user-name");
-  var userScoreSpan = document.querySelector("#user-score");
-
-  renderLastRegistered();
-
-  // function displayMessage(type, message) {
-  //   msgDiv.textContent = message;
-  //   msgDiv.setAttribute("class", type);
-  // }
-
-  function renderLastRegistered() {
-    var name = localStorage.getItem("name");
-    // var password = localStorage.getItem("password");
-
-    if (!name) {
-      return;
-    }
-
-    userNameSpan.textContent = name;
-    userScoreSpan.textContent = score;
-  }
-
-  submitButton.addEventListener("click", function(event) {
-    event.preventDefault();
-
-    var name = document.querySelector("#email").value;
-    // var password = document.querySelector("#password").value;
-
-    if (name === "") {
-      displayMessage("error", "Name cannot be blank");
-    } else {
-      displayMessage("success", "Registered successfully");
-
-      localStorage.setItem("name", email);
-      // localStorage.setItem("password", password);
-      renderLastRegistered();
-    }
-  });
-  // start the quiz button
-  document.getElementById("submit-button").onclick = function () {
+  
+  function scoreboard () {
     location.href = "./scoreboard.html";
-};
-
-var userInput =[];
-  for(var i = 0; i < 1; i++) {
-    userInput.push(prompt(""))
-  }
+  };
 
 
- 
  

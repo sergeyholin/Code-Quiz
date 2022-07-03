@@ -12,10 +12,9 @@
 
 <body>
 
-  <!-- Add a navbar here -->
+  <!-- navbar -->
   <nav class="d-flex justify-content-between navbar navbar-light bg-light">
-  <!-- <form class="form-inline"> -->
-      <button class="btn btn-outline-success" type="button">View Highscores</button>
+      <button class="btn btn-outline-success" type="button" id = "high-scores">View Highscores</button>
      
       <span class="navbar-text">
         <h2>Coding Quiz Challenge</h2>
@@ -27,21 +26,17 @@
  
     
    </nav>
-  <!-- https://getbootstrap.com/docs/4.5/components/navbar/ -->
 
   <div class="container">
-    <!-- create page margins -->
-  <!-- look up "container" if you don't want it to take the whole page and if you want some margins -->
     
-  <!-- Add a Jumbotron here -->
+  <!-- Jumbotron -->
   <div class="jumbotron">
     <h1 class="display-4">Coding Quiz Challenge</h1>
-    <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> -->
     <hr class="my-4">
-    <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by 10 seconds!</p>
+    <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by 20 seconds!</p>
     <a class="btn btn-primary btn-lg" href="#" role="button" id = "start-quiz">Start Quiz</a>
   </div>
-    <!-- https://getbootstrap.com/docs/4.5/components/jumbotron/ -->
+    <!-- Footer -->
   </div>
 
     <div class="d-flex justify-content-center alert alert-light bg-light" role="alert">
@@ -60,6 +55,9 @@
     
     document.getElementById("start-quiz").onclick = function () {
       location.href = "./test.html";
+  };
+  document.getElementById("high-scores").onclick = function () {
+      location.href = "./scoreboard.html";
   };
   </script>
 
